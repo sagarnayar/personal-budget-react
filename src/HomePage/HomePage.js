@@ -123,7 +123,7 @@ function HomePage() {
                 <article>
                     <h1>Chart.js</h1>
                     <p>
-                        <canvas id="myChart" width="400" height="400" ref={chartRef}></canvas>
+                        <canvas id="myChart" width="500" height="500" ref={chartRef}></canvas>
                     </p>
                 </article>
 
