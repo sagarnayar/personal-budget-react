@@ -9,7 +9,7 @@ function HomePage() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
+              try {
                 const response = await axiosGet('/budget');
 
                 if (response && response.data && response.data.myBudget) {
@@ -157,7 +157,7 @@ function drawD3DonutChart(data) {
 
     const color = d3.scaleOrdinal()
         .domain(data.map(d => d.title))
-        .range(['#ffcd56', '#ff6384', '#36a2eb', '#fd6b19']);
+        .range(['fd6b19', '#36a2eb', '#ff6384', '#ffcd56']);
 
     const pie = d3.pie()
         .value(d => d.budget);
