@@ -31,13 +31,13 @@ function HomePage() {
                                 {
                                     data: data,
                                     backgroundColor: [
-                                        'red',
-                                        'blue',
-                                        'green',
-                                        'yellow',
-                                        'orange',
-                                        'purple',
                                         'pink',
+                                        'green',
+                                        'red',
+                                        'orange',
+                                        'yellow',
+                                        'violet',
+                                        'blue',
                                     ],
                                 },
                             ],
@@ -50,7 +50,7 @@ function HomePage() {
 
                 }
             } catch (error) {
-                console.error('Fetching error data:', error);
+                console.error('Fetching data error', error);
             }
         };
 
@@ -163,12 +163,12 @@ function drawD3DonutChart(data) {
         .value(d => d.budget);
 
     const arc = d3.arc()
-        .outerRadius(radius - 10)
-        .innerRadius(radius - 70);
+        .outerRadius(radius - 20)
+        .innerRadius(radius - 60);
 
     const outerArc = d3.arc()
-        .outerRadius(radius - 40)
-        .innerRadius(radius - 40);
+        .outerRadius(radius - 30)
+        .innerRadius(radius - 30);
 
     const arcs = svg.selectAll('arc')
         .data(pie(data))
@@ -193,7 +193,7 @@ function drawD3DonutChart(data) {
             const midAngle = Math.atan2(pos[1], pos[0]);
             return Math.sin(midAngle) * (radius + 10);
         })
-        .attr('stroke', 'blue');
+        .attr('stroke', 'green');
 
     arcs.append('text')
         .attr('transform', d => {
